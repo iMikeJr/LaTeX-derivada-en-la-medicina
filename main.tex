@@ -1,0 +1,61 @@
+\documentclass[10pt,a4paper,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\usepackage{tocbibind}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{wrapfig,lipsum,booktabs}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{multicol}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \lhead[\leftmark]{Nombre Autor}
+% \rhead[Nombre Autor]{\rightmark}
+% \lfoot[]{página \thepage}
+% \rfoot[página \thepage]{}
+
+% Contador para subsubsection, para que aparezca en la tabla de contenidos
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+% -------------- quitar el ":" de las figuras"
+\makeatletter
+\long\def\@makecaption#1#2{
+\vskip\abovecaptionskip
+\sbox\@tempboxa{#1. #2}
+\ifdim \wd\@tempboxa >\hsize
+#1. #2\par
+\else
+\global \@minipagefalse
+\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}
+\fi
+\vskip\belowcaptionskip}
+\makeatother
+% ---------------------------------------
+
+
+\usepackage[left=2.54cm,right=2.54cm,top=2.54cm, bottom=2.54cm]{geometry}
+\author{Jiménez Ramos Miguel}
+\title{Proyecto}
+\begin{document}
+
+ \includepdf{caratula/caratulad.pdf}
+ \renewcommand{\thechapter}{\Roman{chapter}}
+ \renewcommand*\contentsname{Contenido}
+
+
+\tableofcontents
+\listoffigures
+\include{capitulos/fraseuno}
+\include{capitulos/Capitulo1}
+\include{capitulos/capitulo2}
+\include{capitulos/Bibliografía}
+\end{document}
